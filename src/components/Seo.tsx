@@ -93,8 +93,8 @@ const SEO: React.FC<SeoProps> = ({ description, lang = 'nl', meta, title }) => {
         href={`${withPrefix('/')}img/favicon-16x16.png`}
         sizes="16x16"
       />
+      <link rel="manifest" href={`${withPrefix('/')}img/site.webmanifest`}/>
 
-      <link rel="mask-icon" href={`${withPrefix('/')}img/safari-pinned-tab.svg`} color="#ff4400" />
       {/* <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Poppins|Rubik&display=swap" rel="stylesheet"/> */}
       {/* <link
         rel="stylesheet"
