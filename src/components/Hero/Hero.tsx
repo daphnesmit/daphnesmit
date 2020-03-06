@@ -69,7 +69,7 @@ const HeroMe = styled(Img)`
 `
 
 const Hero: React.FC = () => {
-  const { source, loaded } = useBackgroundImage('/img/trans-me.png')
+  const { source, loaded } = useBackgroundImage('/img/trans-me-shadow.png')
   return (
     <HeroContainer>
       <Container maxWidth="lg">

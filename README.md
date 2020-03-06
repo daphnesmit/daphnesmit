@@ -1,9 +1,9 @@
 
 <h1 align="center">
-  VSP nieuwegein
+  Daphne Smit | Personal website
 </h1>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ff37eb73-08ff-4533-97dd-099a2c63652f/deploy-status)](https://app.netlify.com/sites/vsp-nieuwegein/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ff37eb73-08ff-4533-97dd-099a2c63652f/deploy-status)](https://app.netlify.com/sites/daphnesmit/deploys)
 
 ## 🚀 Quick start
 
@@ -12,7 +12,7 @@
     Navigate into the site’s directory and start it up.
 
     ```shell
-    cd vsp-nieuwegein
+    cd daphnesmit
     gatsby develop
     ```
 
@@ -74,4 +74,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 ## 💫 Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/daphnesmit/vsp-nieuwegein)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/daphnesmit/daphnesmit)
