@@ -1,0 +1,41 @@
+
+
+
+{
+  "compilerOptions": {
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noUnusedLocals": true,
+    "removeComments": false,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "module": "commonjs",
+    "target": "esnext",
+    "noEmit": true,
+    "strict": true,
+    "jsx": "preserve",
+    "lib": [
+      "dom",
+      "esnext"
+    ], 
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*",
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*",
+    "./types/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "public",
+    ".cache"
+  ]
+}
