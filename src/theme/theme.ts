@@ -5,7 +5,7 @@ import { grid } from './grid'
 
 
 export const theme: DefaultTheme = {
-  breakpoints: ['40em', '52em', '64em', '80em'],
+  breakpoints: ['30em', '52em', '64em', '80em'],
   fontSizes: {
     root: '10px',
     body: {
@@ -54,7 +54,7 @@ export const theme: DefaultTheme = {
   fonts: {
     rubik: 'Rubik, Arial, sans-serif',
     poppins: 'Poppins, Arial, sans-serif',
-    playfair: 'Playfair Display, georgia, serif',
+    playfair: 'Playfair Display, times new roman, serif',
   },
   // shadows: {
   //   summary: `0 6px 35px 0 rgba(8, 35, 145, 0.1)`,

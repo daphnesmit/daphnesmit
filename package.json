@@ -41,10 +41,13 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "styled-components": "^5.0.0"
+    "react-intersection-observer": "^8.26.1",
+    "styled-components": "^5.0.0",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.15",
+    "@types/styled-system": "^5.1.9",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
     "@typescript-eslint/parser": "^2.18.0",
     "eslint": "^6.8.0",

@@ -1,67 +1,141 @@
-import React from 'react'
+import React, { FC, useEffect, useRef, useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 import styled, { css } from 'styled-components'
 
-interface Props {
-  width?: string
-  height?: string
-  lazyload?: boolean
-  alt: string
-  src: string
+type StyledImgProps = {
+  objectFit?: boolean
+}
+
+type SharedImgComponentProps = StyledImgProps & {
+  src?: string
   srcSet?: {
     src: string
     width: number
   }[]
+  preload?: string
+  alt: string
 }
 
-const StyledPicture = styled.picture<{ width?: string; height?: string }>`
-  display: flex;
-  align-items: center;
-  ${({ width }) => `width: ${width || '100%'};`}
-  ${({ height }) =>
-    height &&
-    css`
-      height: ${height};
-    `}
-`
+type ImgWrapperProps = StyledImgProps & {
+  width?: string
+  height?: string
+}
 
-const StyledImg = styled.img`
+type ImgComponentProps = SharedImgComponentProps &
+  ImgWrapperProps & {
+    caption?: string
+  }
+
+type ImgProps = FC<HTMLImageElement> & SharedImgComponentProps
+
+const objectFitStyles = css`
+  object-fit: cover;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  max-width: none;
+  max-height: none;
+`
+const defaultImgStyles = css`
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
 `
 
-const Img: React.FC<Props> = props => {
-  const { src, srcSet, alt, lazyload, width, height } = props
-  if (!src && !srcSet) {
-    return null
+const ImgWrapper = styled.figure<ImgWrapperProps>`
+  position: relative;
+  margin: 0;
+  width: ${props => props.width};
+  height: ${props => props.height};
+  overflow: hidden;
+`
+
+const StyledImg = styled.img<ImgProps>`
+  ${defaultImgStyles}
+  ${props => (props.objectFit ? objectFitStyles : '')};
+  position: relative;
+  display: block;
+  opacity: 0;
+  transition: opacity 300ms;
+  z-index: 1;
+  .image--is-loaded & {
+    opacity: 1;
+  }
+`
+
+const PreloadImg = styled.img<ImgProps>`
+  ${defaultImgStyles}
+  ${props => (props.objectFit ? objectFitStyles : '')};
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  transition: opacity 300ms 50ms;
+  opacity: 1;
+  z-index: 0;
+`
+
+const StyledCaption = styled.figcaption``
+
+const Img: FC<ImgComponentProps> = ({
+  src,
+  srcSet,
+  alt,
+  preload,
+  caption,
+  objectFit = true,
+  ...props
+}) => {
+  const [ref, inView] = useInView({
+    threshold: 0,
+  })
+
+  const imageRef = useRef() as React.MutableRefObject<HTMLImageElement>
+
+  const [loaded, setLoaded] = useState(false)
+  const [transitioning, setTransitioning] = useState(false)
+
+  useEffect(() => {
+    const image = imageRef.current
+
+    if (inView && image) {
+      image.addEventListener('transitionend', transitionHandler, { once: true })
+
+      if (!src) return swapImg()
+
+      image.src = ''
+      image.onload = () => swapImg()
+      image.src = src
+
+      if (srcSet) image.srcset = srcSet.map(item => `${item.src} ${item.width}w`).join(',')
+    }
+    return () => {
+      if (image) {
+        image.removeEventListener('transitionend', transitionHandler)
+      }
+    }
+  }, [inView, imageRef, src, srcSet])
+
+  const transitionHandler = ({ propertyName }: TransitionEvent) => {
+    if (propertyName === 'opacity') {
+      setLoaded(true)
+    }
+  }
+
+  const swapImg = () => {
+    setTransitioning(true)
   }
 
   return (
-    <StyledPicture width={width} height={height} {...props}>
-      <source
-        data-srcset={srcSet ? srcSet.map(item => `${item.src} ${item.width}w`) : null}
-        srcSet={
-          !lazyload && srcSet
-            ? srcSet.map(item => `${item.src} ${item.width}w`).toString()
-            : undefined
-        }
-      />
-      <StyledImg
-        data-sizes="auto"
-        className={lazyload ? 'lazyload' : ''}
-        data-src={lazyload ? src : null}
-        src={
-          lazyload
-            ? 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='
-            : src
-        }
-        alt={alt}
-      />
-      <noscript>
-        <StyledImg src={src} alt={alt} />
-      </noscript>
-    </StyledPicture>
+    <ImgWrapper
+      {...props}
+      objectFit={objectFit}
+      ref={ref}
+      className={transitioning ? 'image--is-loaded' : ''}>
+      <StyledImg ref={imageRef} objectFit={objectFit} src={preload} alt={alt} />
+      {!loaded && <PreloadImg objectFit={objectFit} src={preload} aria-hidden="true" alt={alt} />}
+      {caption && <StyledCaption>{caption}</StyledCaption>}
+    </ImgWrapper>
   )
 }
-
 export default Img
