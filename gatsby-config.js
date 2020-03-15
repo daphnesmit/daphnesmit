@@ -9,7 +9,7 @@ module.exports = {
   siteMetadata: {
     author: 'Daphne Smit',
     title: 'Daphne Smit',
-    description: 'Freelance Front-end developer ⚡️ Amsterdam 👩🏼‍💻 Proud Nerd',
+    description: 'Freelance Front-end developer ⚡️ Amsterdam 👩🏼‍💻 Proud Nerd. Daphne Smit: Let\'s git commit and create epic shit!',
   },
   plugins: [
     {

@@ -71,7 +71,7 @@ const HeroRole = styled.span`
   }
 
   ${media.min('tablet')} {
-    font-size: 3.8vmin;
+    font-size: 4vmin;
   }
 `
 
@@ -302,12 +302,12 @@ const Hero: React.FC = () => {
                 <HeroName as="h2">
                   Daphne Smit
                   <br />
-                  Frontend Developer
+                  Freelance Frontend Developer
                 </HeroName>
                 <HeroTitle as="h1">
                   ― Hey there! I’m an
                   <br />
-                  independent <HeroRole>&nbsp;freelancer</HeroRole>
+                  Frontend <HeroRole>&nbsp;Developer</HeroRole>
                   <br /> from Amsterdam
                 </HeroTitle>
               </HeroTextBox>
