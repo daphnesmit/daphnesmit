@@ -32,8 +32,12 @@ const HeroName = styled(Heading)`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
 
   ${media.min('mobile')} {
-    font-size: 2.2vmin;
+    font-size: 2.9vmin;
     font-weight: ${({ theme }) => theme.fontWeights.medium};
+  }
+
+  ${media.min('tablet')} {
+    font-size: 2.2vmin;
   }
 `
 
@@ -46,8 +50,11 @@ const HeroTitle = styled(Heading)`
   display: block;
 
   ${media.min('mobile')} {
+    font-size: 6vmin;
+  }
+
+  ${media.min('tablet')} {
     font-size: 5.2vmin;
-    width: 360px;
   }
 `
 
@@ -60,6 +67,10 @@ const HeroRole = styled.span`
   background-color: ${({ theme }) => theme.colors.tertiary};
 
   ${media.min('mobile')} {
+    font-size: 5vmin;
+  }
+
+  ${media.min('tablet')} {
     font-size: 3.8vmin;
   }
 `
@@ -70,7 +81,11 @@ const HeroTextBox = styled(Box)`
   z-index: 3;
 
   ${media.min('mobile')} {
-    top: 33vmin;
+    top: 45vmin;
+  }
+
+  ${media.min('tablet')} {
+    top: 34vmin;
   }
 `
 
@@ -85,14 +100,21 @@ const HeroCircleBackground = styled.div`
   bottom: -20vmin;
 
   ${media.min('mobile')} {
-    height: 96vmin;
-    width: 96vmin;
+    height: 120vmin;
+    width: 120vmin;
+    right: -72vmin;
+    bottom: -19vmin;
+  }
+
+  ${media.min('tablet')} {
+    height: 97vmin;
+    width: 97vmin;
     right: -56vmin;
-    top: 20vmin;
+    bottom: -17vmin;
   }
 `
 
-const HeroImgBox = styled(Box)`
+const HeroImgMe = styled(Box)`
   position: absolute;
   width: 80vmin;
   bottom: -5vmin;
@@ -101,8 +123,14 @@ const HeroImgBox = styled(Box)`
   z-index: 2;
 
   ${media.min('mobile')} {
+    width: 49vmin;
+    bottom: -4vmin;
+    right: -17vmin;
+  }
+
+  ${media.min('tablet')} {
     width: 48vmin;
-    top: 7vmin;
+    bottom: -4vmin;
     right: -3vmin;
   }
 `
@@ -115,33 +143,45 @@ const HeroPositioner = styled(Box)`
   height: 100vh;
 `
 
-const HeroImgDecor1 = styled(Box)`
+const HeroImgDecoration1 = styled(Box)`
   width: 28vmin;
   position: absolute;
   top: 32vmin;
   left: 0;
 
   ${media.min('mobile')} {
-    width: 13vmin;
-    top: 30vmin;
+    width: 20vmin;
+    left: -5vmin;
+  }
+
+  ${media.min('tablet')} {
+    width: 14vmin;
+    top: 29vmin;
     right: 66vmin;
+    left: auto;
   }
 `
 
-const HeroImgDecor2 = styled(Box)`
+const HeroImgDecoration2 = styled(Box)`
   width: 40vmin;
   position: absolute;
   bottom: 25vmin;
   right: 30vmin;
 
   ${media.min('mobile')} {
+    width: 30vmin;
+    bottom: 15vmin;
+    right: 45vmin;
+  }
+
+  ${media.min('tablet')} {
     width: 15vmin;
     top: 60vmin;
-    right: 52vmin;
+    right: 50vmin;
   }
 `
 
-const HeroDecorCircle1 = styled(Box)`
+const HeroCircleDecoration1 = styled(Box)`
   position: absolute;
   bottom: 50vmin;
   left: 5vmin;
@@ -160,7 +200,7 @@ const HeroDecorCircle1 = styled(Box)`
   }
 `
 
-const HeroDecorCircle2 = styled(Box)`
+const HeroCircleDecoration2 = styled(Box)`
   position: absolute;
   top: 10vmin;
   right: 5vmin;
@@ -177,7 +217,7 @@ const HeroDecorCircle2 = styled(Box)`
   }
 `
 
-const HeroDecorCircle3 = styled(Box)`
+const HeroCircleDecoration3 = styled(Box)`
   position: absolute;
   top: 45vmin;
   left: 40vmin;
@@ -194,7 +234,7 @@ const HeroDecorCircle3 = styled(Box)`
   }
 `
 
-const HeroDecorCircle4 = styled(Box)`
+const HeroCircleDecoration4 = styled(Box)`
   position: absolute;
   top: 75vmin;
   left: -5vmin;
@@ -210,7 +250,7 @@ const HeroDecorCircle4 = styled(Box)`
   }
 `
 
-const HeroScroll = styled(Box)`
+const HeroScrollIndicator = styled(Box)`
   position: absolute;
   bottom: 0;
   width: auto;
@@ -240,12 +280,11 @@ const HeroScroll = styled(Box)`
 
 
   ${media.min('mobile')} {
-    padding-left:6vmin;
-    top: 94vmin;
+    padding-left: 10vmin;
     font-size: 1.8vmin;
 
     &::before {
-      width: 5vmin;
+      width: 8vmin;
     }
   }
 }
@@ -257,7 +296,7 @@ const Hero: React.FC = () => {
     <HeroContainer>
       <Container maxWidth="lg">
         <Grid container justify="center" alignItems="center">
-          <Grid item xs={12} sm={10}>
+          <Grid item xs={12} md={10}>
             <HeroPositioner position="relative">
               <HeroTextBox>
                 <HeroName as="h2">
@@ -273,7 +312,7 @@ const Hero: React.FC = () => {
                 </HeroTitle>
               </HeroTextBox>
               <HeroCircleBackground />
-              <HeroImgBox>
+              <HeroImgMe>
                 <Img
                   src="/img/trans-me-shadow_630.png"
                   srcSet={[
@@ -297,18 +336,18 @@ const Hero: React.FC = () => {
                   preload="/img/trans-me-shadow-preload.png"
                   alt="Profiel Foto Daphne Smit"
                 />
-              </HeroImgBox>
-              <HeroImgDecor1>
+              </HeroImgMe>
+              <HeroImgDecoration1>
                 <Img src="/img/hero-decor-01.png" alt="" />
-              </HeroImgDecor1>
-              <HeroImgDecor2>
+              </HeroImgDecoration1>
+              <HeroImgDecoration2>
                 <Img src="/img/hero-decor-02.png" alt="" />
-              </HeroImgDecor2>
-              <HeroDecorCircle1 />
-              <HeroDecorCircle2 />
-              <HeroDecorCircle3 />
-              <HeroDecorCircle4 />
-              <HeroScroll>Scroll</HeroScroll>
+              </HeroImgDecoration2>
+              <HeroCircleDecoration1 />
+              <HeroCircleDecoration2 />
+              <HeroCircleDecoration3 />
+              <HeroCircleDecoration4 />
+              <HeroScrollIndicator>Scroll</HeroScrollIndicator>
             </HeroPositioner>
           </Grid>
         </Grid>
