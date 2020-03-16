@@ -13,9 +13,9 @@ interface BaseLayoutProps {
   title?: string
 }
 
-console.log(useCornify)
 const BaseLayout: React.FC<BaseLayoutProps> = ({ title, children }) => {
   useCornify({ addMagicalWords: false })
+  console.log(title)
   return (
     <ThemeProvider theme={theme}>
       <Seo title={title} />
