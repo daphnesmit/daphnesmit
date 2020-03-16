@@ -13,7 +13,10 @@
     "format": "prettier --write \"**/*.{ts,tsx,js,jsx}\"",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ignore-path .gitignore --ext .ts,.tsx --fix",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+
+    "svgr": "npx @svgr/cli ./static/img/icons --template ./static/img/icons/svgrtemplate.js --ext tsx --out-dir ./src/components/Icon/icons"
+  
   },
   "dependencies": {
     "@material-ui/core": "^4.9.0",

@@ -1,56 +1,44 @@
-import React from 'react'
-import { SvgIconProps } from '@material-ui/core/SvgIcon'
-import Box from '@material-ui/core/Box'
-import styled, { css } from 'styled-components'
+import { Box, BoxProps } from '../Box'
+import React, { FC } from 'react'
+import styled from 'styled-components'
 
-import { Conference, Phone, Speech } from './icons'
+import { IconOption, icons } from '@/theme/theme'
+import { Omit } from '@/utils/types'
 
-export type IconOption = keyof typeof icons
-
-export const icons = {
-  Conference,
-  Phone,
-  Speech,
-}
-interface IconOwnProps {
+type IconProps = Omit<BoxProps, 'width' | 'height'> & {
   icon: IconOption
+  rotate?: number
   color?: string
-  size?: number | any[]
-  width?: number | any[]
-  height?: number | any[]
-  viewBox?: string
+  size: number | string | any[]
 }
 
-const IconWrapper = styled(Box)`
+const StyledIconWrapper = styled(Box)<BoxProps & { rotate?: number }>`
   transition: transform 0.2s ease-in-out;
+  ${props => props.rotate && `transform: rotate(${props.rotate}deg);`};
   display: flex;
   flex-shrink: 0;
   justify-content: center;
   align-items: center;
-  ${({ theme, color }) =>
-    css`
-      color: ${theme.colors[color]};
-    `};
+  min-width: 15px;
+  min-height: 15px;
 `
-export type IconProps = SvgIconProps & IconOwnProps
-const Icon: React.FC<IconProps> = ({
-  icon,
-  width,
-  height,
-  color = 'primary',
-  size,
-  viewBox = '0 0 24 24',
-}) => {
+
+const Icon: FC<IconProps> = ({ size, icon, ...props }) => {
   const IconComponent = icons[icon]
-  const w = size ? size : width ? width : 20
-  const h = size ? size : height ? height : 20
+
   return (
-    <IconWrapper color={color} width={w} height={h}>
-      <svg focusable="false" width="100%" aria-hidden="true" role="presentation" viewBox={viewBox}>
-        <IconComponent />
-      </svg>
-    </IconWrapper>
+    <StyledIconWrapper {...props} width={size} height={size} color={props.color}>
+      <IconComponent
+        role="presentation"
+        aria-hidden="true"
+        focusable="false"
+        style={{
+          fill: 'currentColor',
+        }}
+        width="100%"
+        height="100%"
+      />
+    </StyledIconWrapper>
   )
 }
-
 export default Icon

@@ -1,0 +1,8 @@
+export { default as FacebookFull } from './FacebookFull'
+export { default as Facebook } from './Facebook'
+export { default as Github } from './Github'
+export { default as Instagram } from './Instagram'
+export { default as LinkedinFull } from './LinkedinFull'
+export { default as Linkedin } from './Linkedin'
+export { default as TwitterFull } from './TwitterFull'
+export { default as Twitter } from './Twitter'

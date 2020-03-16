@@ -1,5 +1,6 @@
 import { DefaultTheme } from 'styled-components'
 
+import * as iconComponents from '../components/Icon/icons'
 import { colors } from './colors'
 import { grid } from './grid'
 
@@ -63,3 +64,8 @@ export const theme: DefaultTheme = {
   colors,
   grid,
 }
+
+
+export const icons = iconComponents
+
+export type IconOption = keyof typeof icons

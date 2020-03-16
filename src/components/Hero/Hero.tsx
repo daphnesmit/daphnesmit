@@ -2,12 +2,14 @@ import React from 'react'
 import styled, { keyframes, css } from 'styled-components'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
-import { Link } from 'gatsby'
+// import { Link } from 'gatsby'
 import Img from '../Img'
 import { media } from '@/utils/media'
-import { useBackgroundImage } from '@/utils/hooks/useBackgroundImage'
+// import { useBackgroundImage } from '@/utils/hooks/useBackgroundImage'
 import { Box } from '../Box'
+import { Flex } from '../Flex'
 import { Heading } from '../Heading'
+import Icon from '../Icon'
 
 interface HeroContainerProps {
   background?: string
@@ -210,7 +212,7 @@ const HeroCircleDecoration2 = styled(Box)`
   position: absolute;
   top: 10vmin;
   right: 5vmin;
-  border-color: #d6a485;
+  border-color: ${({ theme }) => theme.colors.tertiary};
   border-style: solid;
   border-width: 2px;
   border-radius: 100%;
@@ -244,7 +246,7 @@ const HeroCircleDecoration4 = styled(Box)`
   position: absolute;
   top: 75vmin;
   left: -5vmin;
-  border-color: #d6a485;
+  border-color: ${({ theme }) => theme.colors.tertiary};
   border-style: solid;
   border-width: 2px;
   border-radius: 100%;
@@ -334,6 +336,22 @@ const Circle = styled.circle<CircleProps>`
     `};
 `
 
+const HeroIcons = styled(Flex)`
+  margin-top: 4rem;
+  > a ~ a {
+    margin-left: 2vmin;
+  }
+`
+const HeroIconLink = styled.a`
+  &:focus,
+  &:hover {
+    /* opacity: 0.7; */
+    svg path {
+      fill: ${({ theme }) => theme.colors.secondary};
+    }
+  }
+`
+
 const Hero: React.FC = () => {
   // const { source, loaded } = useBackgroundImage('/img/trans-me-shadow.png')
   return (
@@ -354,6 +372,26 @@ const Hero: React.FC = () => {
                   Frontend <HeroRole>&nbsp;Developer</HeroRole>
                   <br /> from Amsterdam
                 </HeroTitle>
+                <HeroIcons>
+                  <HeroIconLink href="https://github.com/daphnesmit">
+                    <Icon icon="Github" size="2.5vmin" color="#282828" />
+                  </HeroIconLink>
+                  <HeroIconLink href="https://www.linkedin.com/in/daphnesmit/">
+                    <Icon icon="LinkedinFull" size="2.5vmin" color="#282828" />
+                  </HeroIconLink>
+                  <HeroIconLink href="https://www.facebook.com/daphnesmit1986">
+                    <Icon icon="Facebook" size="2.5vmin" color="#282828" />
+                  </HeroIconLink>
+                  {/* <Icon icon="FacebookFull" size="2.5vmin" color="#282828"/> */}
+                  <HeroIconLink href="https://twitter.com/daphnesmit">
+                    <Icon icon="Twitter" size="2.5vmin" color="#282828" />
+                  </HeroIconLink>
+                  {/* <Icon icon="TwitterFull" size="2.5vmin" color="#282828"/> */}
+                  <HeroIconLink href="https://www.instagram.com/daphnesmit">
+                    <Icon icon="Instagram" size="2.5vmin" color="#282828" />
+                  </HeroIconLink>
+                  {/* <Icon icon="Linkedin" size="2.5vmin" color="#282828"/> */}
+                </HeroIcons>
               </HeroTextBox>
               <HeroCircleBackground />
               <HeroImgMe>
