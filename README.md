@@ -73,7 +73,7 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 - **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
 
-## Generate icons from svg
+## 💥 Generate icons from svg
 
 Place all your icons in `/static/img/icons`. Run `npm run svgr`. This generates tsx components from your svg's and optimizes them with SVGO. SVGO config is located in the root of the project. The CamelCased filename will be the name of the icon.
 
