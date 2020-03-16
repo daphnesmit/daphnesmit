@@ -349,7 +349,7 @@ const Hero: React.FC = () => {
                   Freelance Frontend Developer
                 </HeroName>
                 <HeroTitle as="h1">
-                  ― Hey there! I’m an
+                  ― Hey there! I’m a
                   <br />
                   Frontend <HeroRole>&nbsp;Developer</HeroRole>
                   <br /> from Amsterdam
