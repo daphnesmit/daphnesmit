@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import { Link } from 'gatsby'
@@ -185,18 +185,10 @@ const HeroCircleDecoration1 = styled(Box)`
   position: absolute;
   bottom: 50vmin;
   left: 5vmin;
-  border-color: #87a892;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 100%;
-  width: 10vmin;
-  height: 10vmin;
 
   ${media.min('mobile')} {
     top: 18vmin;
     left: 43vmin;
-    width: 3vmin;
-    height: 3vmin;
   }
 `
 
@@ -290,6 +282,44 @@ const HeroScrollIndicator = styled(Box)`
 }
 `
 
+function calculateCircumference(radius: number) {
+  return 2 * Math.PI * radius
+}
+
+const percentageFill = (radius: number) => keyframes`
+  0% {
+    stroke-dashoffset: ${calculateCircumference(radius)};
+  }
+  
+  20% {
+    stroke-dashoffset: 0;
+  }
+  
+  100% {
+    stroke-dashoffset: 0;
+  }
+`
+
+interface CircleProps {
+  r: number
+}
+// stroke-dasharray: Π * radius * 2
+const Circle = styled.circle<CircleProps>`
+  fill: transparent;
+  stroke-width: 2;
+  stroke-dasharray: ${({ r }) => calculateCircumference(r)};
+  transition: stroke-dashoffset 1s;
+  -webkit-animation-play-state: running;
+  /* firefox bug fix - won't rotate at 90deg angles */
+  -moz-transform: rotate(-89deg) translateX(-190px);
+
+  stroke-dashoffset: 0;
+  ${({ r }) =>
+    css`
+      animation: ${percentageFill(r)} 5s ease-out 5s infinite alternate-reverse both;
+    `};
+`
+
 const Hero: React.FC = () => {
   // const { source, loaded } = useBackgroundImage('/img/trans-me-shadow.png')
   return (
@@ -343,11 +373,21 @@ const Hero: React.FC = () => {
               <HeroImgDecoration2>
                 <Img src="/img/hero-decor-02.png" alt="" />
               </HeroImgDecoration2>
-              <HeroCircleDecoration1 />
+              <HeroCircleDecoration1>
+                <svg width="30" height="30">
+                  <Circle
+                    stroke="#87a892"
+                    cx="175"
+                    cy="15"
+                    r={10}
+                    transform="rotate(-90, 95, 95)"
+                  />
+                </svg>
+              </HeroCircleDecoration1>
               <HeroCircleDecoration2 />
               <HeroCircleDecoration3 />
               <HeroCircleDecoration4 />
-              <HeroScrollIndicator>Scroll</HeroScrollIndicator>
+              {/* <HeroScrollIndicator>Scroll</HeroScrollIndicator> */}
             </HeroPositioner>
           </Grid>
         </Grid>
