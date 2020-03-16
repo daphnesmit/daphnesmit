@@ -345,7 +345,6 @@ const HeroIcons = styled(Flex)`
 const HeroIconLink = styled.a`
   &:focus,
   &:hover {
-    /* opacity: 0.7; */
     svg path {
       fill: ${({ theme }) => theme.colors.secondary};
     }
@@ -373,21 +372,21 @@ const Hero: React.FC = () => {
                   <br /> from Amsterdam
                 </HeroTitle>
                 <HeroIcons>
-                  <HeroIconLink href="https://github.com/daphnesmit">
+                  <HeroIconLink target="_blank" href="https://github.com/daphnesmit">
                     <Icon icon="Github" size="2.5vmin" color="#282828" />
                   </HeroIconLink>
-                  <HeroIconLink href="https://www.linkedin.com/in/daphnesmit/">
+                  <HeroIconLink target="_blank" href="https://www.linkedin.com/in/daphnesmit/">
                     <Icon icon="LinkedinFull" size="2.5vmin" color="#282828" />
                   </HeroIconLink>
-                  <HeroIconLink href="https://www.facebook.com/daphnesmit1986">
+                  <HeroIconLink target="_blank" href="https://www.facebook.com/daphnesmit1986">
                     <Icon icon="Facebook" size="2.5vmin" color="#282828" />
                   </HeroIconLink>
                   {/* <Icon icon="FacebookFull" size="2.5vmin" color="#282828"/> */}
-                  <HeroIconLink href="https://twitter.com/daphnesmit">
+                  <HeroIconLink target="_blank" href="https://twitter.com/daphnesmit">
                     <Icon icon="Twitter" size="2.5vmin" color="#282828" />
                   </HeroIconLink>
                   {/* <Icon icon="TwitterFull" size="2.5vmin" color="#282828"/> */}
-                  <HeroIconLink href="https://www.instagram.com/daphnesmit">
+                  <HeroIconLink target="_blank" href="https://www.instagram.com/daphnesmit">
                     <Icon icon="Instagram" size="2.5vmin" color="#282828" />
                   </HeroIconLink>
                   {/* <Icon icon="Linkedin" size="2.5vmin" color="#282828"/> */}
