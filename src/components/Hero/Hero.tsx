@@ -361,7 +361,7 @@ const Hero: React.FC = () => {
             <HeroPositioner position="relative">
               <HeroTextBox>
                 <HeroName as="h2">
-                  Daphne Smit
+                  Daphne Smit | 06 30 80 55 51
                   <br />
                   Freelance Frontend Developer
                 </HeroName>
@@ -381,15 +381,12 @@ const Hero: React.FC = () => {
                   <HeroIconLink target="_blank" href="https://www.facebook.com/daphnesmit1986">
                     <Icon icon="Facebook" size="2.5vmin" color="#282828" />
                   </HeroIconLink>
-                  {/* <Icon icon="FacebookFull" size="2.5vmin" color="#282828"/> */}
                   <HeroIconLink target="_blank" href="https://twitter.com/daphnesmit">
                     <Icon icon="Twitter" size="2.5vmin" color="#282828" />
                   </HeroIconLink>
-                  {/* <Icon icon="TwitterFull" size="2.5vmin" color="#282828"/> */}
                   <HeroIconLink target="_blank" href="https://www.instagram.com/daphnesmit">
                     <Icon icon="Instagram" size="2.5vmin" color="#282828" />
                   </HeroIconLink>
-                  {/* <Icon icon="Linkedin" size="2.5vmin" color="#282828"/> */}
                 </HeroIcons>
               </HeroTextBox>
               <HeroCircleBackground />
