@@ -143,11 +143,25 @@ const HeroPositioner = styled(Box)`
   height: 100vh;
 `
 
+const animatedZigZag = keyframes`
+  to {
+    stroke-dashoffset: -2922;
+  }
+`
+
+const ZigZag = styled.polygon`
+  stroke-dasharray: 1882;
+  stroke-dashoffset: -1882;
+  animation: ${animatedZigZag} 1s ease-out 1s forwards;
+`
+
 const HeroImgDecoration1 = styled(Box)`
   width: 28vmin;
   position: absolute;
-  top: 32vmin;
-  left: 0;
+  top: 28vmin;
+  left: -2vmin;
+  transform: rotate(-180deg);
+  transform-origin: center center;
 
   ${media.min('mobile')} {
     width: 20vmin;
@@ -155,8 +169,8 @@ const HeroImgDecoration1 = styled(Box)`
   }
 
   ${media.min('tablet')} {
-    width: 14vmin;
-    top: 29vmin;
+    width: 16vmin;
+    top: 25vmin;
     right: 66vmin;
     left: auto;
   }
@@ -367,8 +381,22 @@ const Hero: React.FC = () => {
                   alt="Profiel Foto Daphne Smit"
                 />
               </HeroImgMe>
-              <HeroImgDecoration1>
-                <Img src="/img/hero-decor-01.png" alt="" />
+              <HeroImgDecoration1 aria-label="Zig Zag Decorational ornament">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  version="1.1"
+                  x="0"
+                  y="0"
+                  viewBox="0 0 960 560"
+                  enableBackground="new 0 0 960 560">
+                  <ZigZag
+                    fill="none"
+                    stroke="#d6a485"
+                    strokeWidth="64"
+                    strokeMiterlimit="40"
+                    points="902 245.5 762.5 141.5 623.01 245.5 483.51 141.5 344.01 245.5 204.5 141.5 65 245.5 "
+                  />
+                </svg>
               </HeroImgDecoration1>
               <HeroImgDecoration2>
                 <Img src="/img/hero-decor-02.png" alt="" />
