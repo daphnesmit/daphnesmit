@@ -7,21 +7,24 @@ import Seo from './Seo'
 import { HeadFontFace } from './HeadFontFace'
 import { GlobalStyle } from '../theme/GlobalStyle'
 import { theme } from '../theme/theme'
+import { useCornify } from 'use-cornify'
 
 interface BaseLayoutProps {
   title?: string
 }
 
+console.log(useCornify)
 const BaseLayout: React.FC<BaseLayoutProps> = ({ title, children }) => {
+  useCornify({ addMagicalWords: false })
   return (
-      <ThemeProvider theme={theme}>
-        <Seo title={title} />
-        <HeadFontFace />
-        <GlobalStyle />
-        <Header />
-        <div>{children}</div>
-        {/* <Footer /> */}
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <Seo title={title} />
+      <HeadFontFace />
+      <GlobalStyle />
+      <Header />
+      <div>{children}</div>
+      {/* <Footer /> */}
+    </ThemeProvider>
   )
 }
 

@@ -4,6 +4,13 @@
   "description": "Freelance Front-end developer ⚡️ Amsterdam 👩🏼‍💻 Proud Nerd. Daphne Smit: Let's git commit and create epic shit!",
   "version": "0.1.0",
   "license": "MIT",
+  "author": "Daphne Smit",
+  "contributors": [
+    {
+      "name": "Daphne Smit",
+      "email": "daphnesmit1986@gmail.com"
+    }
+  ],
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -14,9 +21,7 @@
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ignore-path .gitignore --ext .ts,.tsx --fix",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-
     "svgr": "npx @svgr/cli ./static/img/icons --template ./static/img/icons/svgrtemplate.js --ext tsx --out-dir ./src/components/Icon/icons"
-  
   },
   "dependencies": {
     "@material-ui/core": "^4.9.0",
@@ -46,7 +51,8 @@
     "react-helmet": "^5.2.1",
     "react-intersection-observer": "^8.26.1",
     "styled-components": "^5.0.0",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "use-cornify": "^0.1.4"
   },
   "devDependencies": {
     "@types/react-helmet": "^5.0.15",
