@@ -361,7 +361,7 @@ const Hero: React.FC = () => {
             <HeroPositioner position="relative">
               <HeroTextBox>
                 <HeroName as="h2">
-                  Daphne Smit | 06 30 80 55 51
+                  Daphne Smit | <a href="tel:0031630805551">06 30 80 55 51</a>
                   <br />
                   Freelance Frontend Developer
                 </HeroName>
