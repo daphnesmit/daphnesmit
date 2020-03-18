@@ -9,7 +9,8 @@ module.exports = {
   siteMetadata: {
     author: 'Daphne Smit',
     title: 'Freelance Front-end developer ⚡️',
-    description: 'Freelance Front-end developer ⚡️ Amsterdam 👩🏼‍💻 Proud Nerd. Daphne Smit: Let\'s git commit and create epic shit!',
+    description:
+      "Freelance Front-end developer ⚡️ Amsterdam 👩🏼‍💻 Proud Nerd. Daphne Smit: Let's git commit and create epic shit!",
   },
   plugins: [
     {
@@ -80,6 +81,13 @@ module.exports = {
       options: {
         path: `${__dirname}/src/img`,
         name: 'images',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-copy-files',
+      options: {
+        source: `${__dirname}/static/google176578c2a50d30b0.html`,
+        destination: '',
       },
     },
     'gatsby-plugin-sharp',

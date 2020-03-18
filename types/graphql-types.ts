@@ -2368,6 +2368,8 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___modulePath' |
   'pluginCreator___pluginOptions___path' |
   'pluginCreator___pluginOptions___name' |
+  'pluginCreator___pluginOptions___source' |
+  'pluginCreator___pluginOptions___destination' |
   'pluginCreator___pluginOptions___maxWidth' |
   'pluginCreator___pluginOptions___destinationDir' |
   'pluginCreator___pluginOptions___pathCheck' |
@@ -2579,6 +2581,8 @@ export type SitePluginFieldsEnum =
   'pluginOptions___modulePath' |
   'pluginOptions___path' |
   'pluginOptions___name' |
+  'pluginOptions___source' |
+  'pluginOptions___destination' |
   'pluginOptions___maxWidth' |
   'pluginOptions___destinationDir' |
   'pluginOptions___pathCheck' |
@@ -2705,6 +2709,8 @@ export type SitePluginPluginOptions = {
   modulePath?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
   name?: Maybe<Scalars['String']>,
+  source?: Maybe<Scalars['String']>,
+  destination?: Maybe<Scalars['String']>,
   maxWidth?: Maybe<Scalars['Int']>,
   destinationDir?: Maybe<Scalars['String']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
@@ -2736,6 +2742,8 @@ export type SitePluginPluginOptionsFilterInput = {
   modulePath?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   name?: Maybe<StringQueryOperatorInput>,
+  source?: Maybe<StringQueryOperatorInput>,
+  destination?: Maybe<StringQueryOperatorInput>,
   maxWidth?: Maybe<IntQueryOperatorInput>,
   destinationDir?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
