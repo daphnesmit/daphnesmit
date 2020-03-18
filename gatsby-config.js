@@ -24,15 +24,6 @@ module.exports = {
         display: 'swap',
       },
     },
-    {
-      resolve: 'gatsby-plugin-material-ui',
-      // If you want to use styled components you should change the injection order.
-      options: {
-        // stylesProvider: {
-        //   injectFirst: true,
-        // },
-      },
-    },
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-typescript',

@@ -23,7 +23,7 @@ export const colors: Colors = {
   error: '#E40D10',
   black: '#000000',
   white: '#ffffff',
-  offWhite: '#f5f5f5',
+  offWhite: '#f9f9f9',
   grey: '#9194a0',
   greenish: '#7a8b80',
   subtitle: '#9194a0',

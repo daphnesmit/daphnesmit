@@ -94,13 +94,6 @@ const SEO: React.FC<SeoProps> = ({ description, lang = 'nl', meta, title }) => {
         sizes="16x16"
       />
       <link rel="manifest" href={`${withPrefix('/')}img/site.webmanifest`}/>
-
-      {/* <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Poppins|Rubik&display=swap" rel="stylesheet"/> */}
-      {/* <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-      /> */}
-      {/* <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> */}
     </Helmet>
   )
 }

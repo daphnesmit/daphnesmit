@@ -1,15 +1,18 @@
-import React from 'react'
-import styled, { keyframes, css } from 'styled-components'
-import Grid from '@material-ui/core/Grid'
-import Container from '@material-ui/core/Container'
-// import { Link } from 'gatsby'
+import Icon from '../Icon'
 import Img from '../Img'
-import { media } from '@/utils/media'
-// import { useBackgroundImage } from '@/utils/hooks/useBackgroundImage'
+import React from 'react'
+import styled, { css, keyframes } from 'styled-components'
 import { Box } from '../Box'
+import { Column } from '../Column'
+import { Contain } from '../Contain'
 import { Flex } from '../Flex'
 import { Heading } from '../Heading'
-import Icon from '../Icon'
+import { media } from '@/utils/media'
+import { Row } from '../Row'
+// import Grid from '@material-ui/core/Grid'
+// import Container from '@material-ui/core/Container'
+// import { Link } from 'gatsby'
+// import { useBackgroundImage } from '@/utils/hooks/useBackgroundImage'
 
 interface HeroContainerProps {
   background?: string
@@ -355,9 +358,9 @@ const Hero: React.FC = () => {
   // const { source, loaded } = useBackgroundImage('/img/trans-me-shadow.png')
   return (
     <HeroContainer>
-      <Container maxWidth="lg">
-        <Grid container justify="center" alignItems="center">
-          <Grid item xs={12} md={10}>
+      <Contain>
+        <Row>
+          <Column col={[12, 12, 12, 10]} inset={[0, 0, 0, 1]}>
             <HeroPositioner position="relative">
               <HeroTextBox>
                 <HeroName as="h2">
@@ -451,9 +454,9 @@ const Hero: React.FC = () => {
               <HeroCircleDecoration4 />
               {/* <HeroScrollIndicator>Scroll</HeroScrollIndicator> */}
             </HeroPositioner>
-          </Grid>
-        </Grid>
-      </Container>
+          </Column>
+        </Row>
+      </Contain>
     </HeroContainer>
   )
 }
