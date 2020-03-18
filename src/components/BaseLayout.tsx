@@ -1,5 +1,5 @@
 import React from 'react'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components'
 
 // import Footer from '@/components/Footer'
 import Header from './Header'
@@ -15,7 +15,6 @@ interface BaseLayoutProps {
 
 const BaseLayout: React.FC<BaseLayoutProps> = ({ title, children }) => {
   useCornify({ addMagicalWords: false })
-  console.log(title)
   return (
     <ThemeProvider theme={theme}>
       <Seo title={title} />
