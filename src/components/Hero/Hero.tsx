@@ -22,7 +22,6 @@ const HeroContainer = styled.section<HeroContainerProps>`
 `
 
 const HeroName = styled(Heading)`
-  width: 304px;
   font-size: 3.5vmin;
   line-height: 1.47;
   color: ${({ theme }) => theme.colors.greenish};
@@ -104,7 +103,7 @@ const HeroCircleBackground = styled.div`
     bottom: -19vmin;
   }
 
-  ${media.min('tablet')} {
+  ${media.min('laptop')} {
     height: 97vmin;
     width: 97vmin;
     right: -56vmin;
@@ -126,7 +125,7 @@ const HeroImgMe = styled(Box)`
     right: -17vmin;
   }
 
-  ${media.min('tablet')} {
+  ${media.min('laptop')} {
     width: 48vmin;
     bottom: -4vmin;
     right: -3vmin;
@@ -141,7 +140,25 @@ const HeroPositioner = styled(Box)`
   max-width: 100%;
 
   ${media.min('laptop')} {
-    max-width: none;
+    min-width: calc(100vw - 80px);
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  ${media.min('desktop')} {
+    min-width: 960px;
+    max-width: 100%;
+    width: calc(100vw - 20vmin);
+  }
+
+  ${`@media (min-width: 1300px)`} {
+    min-width: 1100px;
+    width: 150vmin;
+    max-width: 100%;
+  }
+  ${`@media (min-width: 1600px)`} {
+    min-width: 1200px;
+    width: 150vmin;
   }
 `
 
@@ -356,100 +373,102 @@ const Hero: React.FC = () => {
     <HeroContainer>
       <Contain>
         <Row>
-          <Column col={[12, 12, 12, 10]} inset={[0, 0, 0, 1]}>
-            <HeroPositioner position="relative">
-              <HeroTextBox>
-                <HeroName as="h2">
-                  Daphne Smit | <a href="tel:0031630805551">06 30 80 55 51</a>
-                  <br />
-                  Freelance Frontend Developer
-                </HeroName>
-                <HeroTitle as="h1">
-                  ― Hey there! I’m a
-                  <br />
-                  Frontend <HeroRole>&nbsp;Developer</HeroRole>
-                  <br /> from Amsterdam
-                </HeroTitle>
-                <HeroIcons>
-                  <HeroIconLink target="_blank" href="https://github.com/daphnesmit">
-                    <Icon icon="Github" size="2.5vmin" color="#282828" />
-                  </HeroIconLink>
-                  <HeroIconLink target="_blank" href="https://www.linkedin.com/in/daphnesmit/">
-                    <Icon icon="LinkedinFull" size="2.5vmin" color="#282828" />
-                  </HeroIconLink>
-                  <HeroIconLink target="_blank" href="https://www.facebook.com/daphnesmit1986">
-                    <Icon icon="Facebook" size="2.5vmin" color="#282828" />
-                  </HeroIconLink>
-                  <HeroIconLink target="_blank" href="https://twitter.com/daphnesmit">
-                    <Icon icon="Twitter" size="2.5vmin" color="#282828" />
-                  </HeroIconLink>
-                  <HeroIconLink target="_blank" href="https://www.instagram.com/daphnesmit">
-                    <Icon icon="Instagram" size="2.5vmin" color="#282828" />
-                  </HeroIconLink>
-                </HeroIcons>
-              </HeroTextBox>
-              <HeroCircleBackground />
-              <HeroImgMe>
-                <Img
-                  src="/img/trans-me-shadow_630.png"
-                  srcSet={[
-                    {
-                      src: '/img/trans-me-shadow_450.png',
-                      width: 450,
-                    },
-                    {
-                      src: '/img/trans-me-shadow_630.png',
-                      width: 630,
-                    },
-                    {
-                      src: '/img/trans-me-shadow_810.png',
-                      width: 810,
-                    },
-                    {
-                      src: '/img/trans-me-shadow_1080.png',
-                      width: 1080,
-                    },
-                  ]}
-                  preload="/img/trans-me-shadow-preload.png"
-                  alt="Profiel Foto Daphne Smit"
-                />
-              </HeroImgMe>
-              <HeroImgDecoration1 aria-label="Zig Zag Decorational ornament">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  version="1.1"
-                  x="0"
-                  y="0"
-                  viewBox="0 0 960 560"
-                  enableBackground="new 0 0 960 560">
-                  <ZigZag
-                    fill="none"
-                    stroke="#d6a485"
-                    strokeWidth="64"
-                    strokeMiterlimit="40"
-                    points="902 245.5 762.5 141.5 623.01 245.5 483.51 141.5 344.01 245.5 204.5 141.5 65 245.5 "
+          <Column col={[12, 12, 12, 12, 10]} inset={[0, 0, 0, 0, 1]}>
+            <Box position="relative">
+              <HeroPositioner position="relative">
+                <HeroTextBox>
+                  <HeroName as="h2">
+                    Daphne Smit | <a href="tel:0031630805551">06 30 80 55 51</a>
+                    <br />
+                    Freelance Frontend Developer
+                  </HeroName>
+                  <HeroTitle as="h1">
+                    ― Hey there! I’m a
+                    <br />
+                    Frontend <HeroRole>&nbsp;Developer</HeroRole>
+                    <br /> from Amsterdam
+                  </HeroTitle>
+                  <HeroIcons>
+                    <HeroIconLink target="_blank" href="https://github.com/daphnesmit">
+                      <Icon icon="Github" size="2.5vmin" color="#282828" />
+                    </HeroIconLink>
+                    <HeroIconLink target="_blank" href="https://www.linkedin.com/in/daphnesmit/">
+                      <Icon icon="LinkedinFull" size="2.5vmin" color="#282828" />
+                    </HeroIconLink>
+                    <HeroIconLink target="_blank" href="https://www.facebook.com/daphnesmit1986">
+                      <Icon icon="Facebook" size="2.5vmin" color="#282828" />
+                    </HeroIconLink>
+                    <HeroIconLink target="_blank" href="https://twitter.com/daphnesmit">
+                      <Icon icon="Twitter" size="2.5vmin" color="#282828" />
+                    </HeroIconLink>
+                    <HeroIconLink target="_blank" href="https://www.instagram.com/daphnesmit">
+                      <Icon icon="Instagram" size="2.5vmin" color="#282828" />
+                    </HeroIconLink>
+                  </HeroIcons>
+                </HeroTextBox>
+                <HeroCircleBackground />
+                <HeroImgMe>
+                  <Img
+                    src="/img/trans-me-shadow_630.png"
+                    srcSet={[
+                      {
+                        src: '/img/trans-me-shadow_450.png',
+                        width: 450,
+                      },
+                      {
+                        src: '/img/trans-me-shadow_630.png',
+                        width: 630,
+                      },
+                      {
+                        src: '/img/trans-me-shadow_810.png',
+                        width: 810,
+                      },
+                      {
+                        src: '/img/trans-me-shadow_1080.png',
+                        width: 1080,
+                      },
+                    ]}
+                    preload="/img/trans-me-shadow-preload.png"
+                    alt="Profiel Foto Daphne Smit"
                   />
-                </svg>
-              </HeroImgDecoration1>
-              <HeroImgDecoration2>
-                <Img src="/img/hero-decor-02.png" alt="" />
-              </HeroImgDecoration2>
-              <HeroCircleDecoration1>
-                <svg width="30" height="30">
-                  <Circle
-                    stroke="#87a892"
-                    cx="175"
-                    cy="15"
-                    r={10}
-                    transform="rotate(-90, 95, 95)"
-                  />
-                </svg>
-              </HeroCircleDecoration1>
-              <HeroCircleDecoration2 />
-              <HeroCircleDecoration3 />
-              <HeroCircleDecoration4 />
-              {/* <HeroScrollIndicator>Scroll</HeroScrollIndicator> */}
-            </HeroPositioner>
+                </HeroImgMe>
+                <HeroImgDecoration1 aria-label="Zig Zag Decorational ornament">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    x="0"
+                    y="0"
+                    viewBox="0 0 960 560"
+                    enableBackground="new 0 0 960 560">
+                    <ZigZag
+                      fill="none"
+                      stroke="#d6a485"
+                      strokeWidth="64"
+                      strokeMiterlimit="40"
+                      points="902 245.5 762.5 141.5 623.01 245.5 483.51 141.5 344.01 245.5 204.5 141.5 65 245.5 "
+                    />
+                  </svg>
+                </HeroImgDecoration1>
+                <HeroImgDecoration2>
+                  <Img src="/img/hero-decor-02.png" alt="" />
+                </HeroImgDecoration2>
+                <HeroCircleDecoration1>
+                  <svg width="30" height="30">
+                    <Circle
+                      stroke="#87a892"
+                      cx="175"
+                      cy="15"
+                      r={10}
+                      transform="rotate(-90, 95, 95)"
+                    />
+                  </svg>
+                </HeroCircleDecoration1>
+                <HeroCircleDecoration2 />
+                <HeroCircleDecoration3 />
+                <HeroCircleDecoration4 />
+                <HeroScrollIndicator>Scroll</HeroScrollIndicator>
+              </HeroPositioner>
+            </Box>
           </Column>
         </Row>
       </Contain>
