@@ -140,25 +140,31 @@ const HeroPositioner = styled(Box)`
   max-width: 100%;
 
   ${media.min('laptop')} {
-    min-width: calc(100vw - 80px);
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
+    min-width: 80vw;
+    max-width: 90vw;
   }
 
   ${media.min('desktop')} {
     min-width: 960px;
     max-width: 100%;
-    width: calc(100vw - 20vmin);
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
   }
 
   ${`@media (min-width: 1300px)`} {
-    min-width: 1100px;
+    min-width: 850px;
     width: 150vmin;
     max-width: 100%;
   }
+
+  ${`@media (min-width: 1440px)`} {
+    max-width: 100%;
+  }
+
   ${`@media (min-width: 1600px)`} {
     min-width: 1200px;
     width: 150vmin;
+    max-width: 70vw;
   }
 `
 
