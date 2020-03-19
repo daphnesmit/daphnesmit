@@ -16,7 +16,7 @@ export const FormikError: React.FC<FormikErrorProps> = ({ name }) => {
         name={name}
         render={(message: string) => {
           return (
-            <Text display="block" fontSize="xxxs" color={colors.error}>
+            <Text fontSize="1.3rem" display="block" fontSize="xxxs" color={colors.error}>
               {message}
             </Text>
           )
