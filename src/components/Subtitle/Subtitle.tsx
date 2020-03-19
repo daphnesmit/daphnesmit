@@ -1,9 +1,8 @@
 import styled from 'styled-components'
 
-const Subtitle = styled.h6`
+export const Subtitle = styled.p`
   color: ${({ theme }) => theme.colors.subtitle};
-  font-weight: 400;
+  font-weight:  ${({ theme }) => theme.fontWeights.regular};
   line-height: 1.5;
 `
 
-export default Subtitle

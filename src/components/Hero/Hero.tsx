@@ -1,5 +1,5 @@
-import Icon from '../Icon'
-import Img from '../Img'
+import { Icon } from '../Icon'
+import { Img } from '../Img'
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { Box } from '../Box'
@@ -9,19 +9,12 @@ import { Flex } from '../Flex'
 import { Heading } from '../Heading'
 import { media } from '@/utils/media'
 import { Row } from '../Row'
-// import Grid from '@material-ui/core/Grid'
-// import Container from '@material-ui/core/Container'
-// import { Link } from 'gatsby'
-// import { useBackgroundImage } from '@/utils/hooks/useBackgroundImage'
 
 interface HeroContainerProps {
   background?: string
 }
 
 const HeroContainer = styled.section<HeroContainerProps>`
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   background-color: ${({ theme }) => theme.colors.primary};
   position: relative;
   height: 100vh;

@@ -77,7 +77,7 @@ const PreloadImg = styled.img<ImgProps>`
 
 const StyledCaption = styled.figcaption``
 
-const Img: FC<ImgComponentProps> = ({
+export const Img: FC<ImgComponentProps> = ({
   src,
   srcSet,
   alt,
@@ -138,4 +138,3 @@ const Img: FC<ImgComponentProps> = ({
     </ImgWrapper>
   )
 }
-export default Img

@@ -23,7 +23,7 @@ const StyledIconWrapper = styled(Box)<BoxProps & { rotate?: number }>`
   min-height: 15px;
 `
 
-const Icon: FC<IconProps> = ({ size, icon, ...props }) => {
+export const Icon: FC<IconProps> = ({ size, icon, ...props }) => {
   const IconComponent = icons[icon]
 
   return (
@@ -41,4 +41,3 @@ const Icon: FC<IconProps> = ({ size, icon, ...props }) => {
     </StyledIconWrapper>
   )
 }
-export default Icon

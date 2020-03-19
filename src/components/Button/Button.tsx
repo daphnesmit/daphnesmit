@@ -1,64 +1,122 @@
-// import React from 'react'
-// import Button from '@material-ui/core/Button'
-// import { withStyles } from '@material-ui/core/styles'
-// import { theme } from '@/theme/theme'
+import { Box, BoxProps } from '../Box'
+import React, { ButtonHTMLAttributes, Component } from 'react'
+import Ink from 'react-ink'
+import styled from 'styled-components'
 
-// const StyledButton = withStyles({
-//   root: {
-//     boxShadow: 'none',
-//     textTransform: 'none',
-//     fontSize: 16,
-//     padding: '9px 30px',
-//     border: '2px solid',
-//     borderRadius: '30px',
-//     minHeight: '48px',
-//     width: 'max-content',
-//     overflow: 'hidden',
-//     position: 'relative',
-//     display: 'flex',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     lineHeight: 1.6,
-//     backgroundColor: theme.colors.primary,
-//     color: theme.colors.white,
-//     borderColor: theme.colors.primary,
-//     fontWeight: theme.fontWeights.bold,
-//     fontFamily: [theme.fonts.primary].join(','),
-//     transition: '200ms',
-//     '&::before': {
-//       content: '""',
-//       display: 'block',
-//       width: '100%',
-//       height: '100%',
-//       margin: 'auto',
-//       position: 'absolute',
-//       zIndex: '-1',
-//       top: '0',
-//       left: '0',
-//       bottom: '0',
-//       right: '0',
-//       backgroundColor: theme.colors.secondary,
-//       transition: 'transform 250ms cubic-bezier(.38,.32,.36,.98) 0s',
-//       transform: 'scaleX(0)',
-//       transformOrigin: 'right center',
-//     },
-//     '&:hover': {
-//       backgroundColor: theme.colors.primary,
-//       transform: 'translate3d(0,0,0)',
-//       borderColor: theme.colors.secondary,
-//       boxShadow: 'none',
-//       '&::before': {
-//         transform: 'scale(1)',
-//         transformOrigin: 'left center',
-//       },
-//     },
-//     '&:active': {
-//       boxShadow: 'none',
-//     },
-//     '&:focus': {
-//       boxShadow: '0 0 0 0.2rem rgba(4,31,121,.2)',
-//     },
-//   },
-// })(Button)
+import { buttons, IconOption } from '@/theme/theme'
 
-// export default StyledButton
+import { Icon } from '../Icon'
+import { Loader } from '../Loader'
+
+type ButtonElements = 'button' | 'a'
+
+interface ConditionalProps {
+  as: ButtonElements
+  type?: 'submit' | 'button' | 'reset'
+}
+
+export type ButtonProps = BoxProps &
+  ButtonHTMLAttributes<HTMLButtonElement> & {
+    as?: ButtonElements
+    variant?: keyof typeof buttons
+    size?: 'small' | 'normal'
+    disabled?: boolean
+    iconReverse?: boolean
+    icon?: IconOption
+    block?: boolean
+    inline?: boolean
+    justify?: 'center' | 'space-between'
+    loading?: boolean
+    selected?: boolean
+    ripple?: boolean
+    href?: string
+    target?: string
+  }
+
+const ButtonBase = styled(Box)<ButtonProps>`
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  ${props => (props.inline ? 'display: inline-flex' : '')};
+  ${props => (props.block ? 'display: block; width: 100%;' : '')};
+  ${props => (props.variant !== 'clear' ? 'height: 50px;' : '')}
+`
+
+const StyledButtonLabel = styled.span<ButtonProps>`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: ${props => props.justify};
+  flex-direction: ${props => (props.iconReverse ? 'row-reverse' : 'row')};
+`
+
+const IconWrapper = styled.span<ButtonProps>`
+  margin: ${props => (!props.iconReverse ? '0 0 0 12px' : '0 12px 0 0')};
+`
+
+// this is a class component because Buttons often need a ref, and function components require React.forwardRef to forward refs
+export class Button extends Component<ButtonProps> {
+  render() {
+    const {
+      as = 'button',
+      icon,
+      children,
+      variant = 'primary',
+      justify = 'center',
+      size = 'normal',
+      type = 'button',
+      ripple = true,
+      loading,
+      disabled,
+      ...props
+    } = this.props
+
+    const conditionalProps: ConditionalProps = { as }
+
+    if (as === 'button') {
+      conditionalProps.type = type
+    }
+
+    return (
+      <ButtonBase
+        {...conditionalProps}
+        variant={variant}
+        disabled={disabled || loading}
+        size={size}
+        {...props}>
+        {variant === 'clear' ? (
+          children
+        ) : (
+          <>
+            {ripple && <Ink />}
+            <StyledButtonLabel size={size} justify={justify} {...props}>
+              {loading ? (
+                <Loader color={'white'} size={50} />
+              ) : (
+                <>
+                  <span>{children}</span>
+                  {icon && (
+                    <IconWrapper>
+                      <Icon size={18} icon={icon} />
+                    </IconWrapper>
+                  )}
+                </>
+              )}
+            </StyledButtonLabel>
+          </>
+        )}
+      </ButtonBase>
+    )
+  }
+}

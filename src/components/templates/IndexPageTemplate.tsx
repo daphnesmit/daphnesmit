@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from '../Hero'
-// import Contact from '../Contact'
+import Contact from '../Contact'
 
 interface IndexPageTemplateProps {
   title: string
@@ -13,7 +13,7 @@ export const IndexPageTemplate: React.FC<IndexPageTemplateProps> = ({ title, ima
   return (
     <>
       <Hero />
-      {/* <Contact /> */}
+      <Contact />
     </>
   )
 }

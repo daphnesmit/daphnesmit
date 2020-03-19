@@ -3,24 +3,8 @@ import 'styled-components'
 
 import { CSSProperties } from 'react'
 
-import { Colors } from '/theme/colors'
+import { CustomTheme } from '@/theme/theme'
 
-interface ThemeGridContainer {
-  maxWidth: number
-  padding: number | any[]
-  paddingSmall: number
-}
-
-interface ThemeGridNavBarWidth {
-  tablet: number
-  desktop: number
-}
-
-interface ThemeGrid {
-  gutter: number | any[]
-  container: ThemeGridContainer
-  navBarWidth: ThemeGridNavBarWidth
-}
 
 interface FontSizeLadder {
   root: string
@@ -72,19 +56,7 @@ interface SpaceLadder {
 
 
 // and extend them!
+
 declare module 'styled-components' {
-  export interface DefaultTheme {
-    breakpoints: string[]
-    fontSizes: FontSizeLadder
-    fontWeights: WeightLadder
-    colors: Colors
-    space: SpaceLadder
-    fonts: {
-      rubik: string
-      poppins: string
-      playfair: string
-    }
-    outline?: string
-    grid: ThemeGrid
-  }
+  export interface DefaultTheme extends CustomTheme {}
 }
