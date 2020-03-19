@@ -8,6 +8,7 @@ import { Contain } from '../Contain'
 import { Heading } from '../Heading'
 import { Row } from '../Row'
 import { Flex } from '../Flex'
+import { Space } from '../Space'
 import { Subtitle } from '../Subtitle'
 import { FormikInput } from '../Formik/FormikInput'
 import { FormikTextArea } from '../Formik/FormikTextArea'
@@ -46,7 +47,7 @@ const ContactLink = styled.a`
   font-weight: ${({ theme }) => theme.fontWeights.extrabold};
 `
 
-function encode(data) {
+function encode(data: ContactFormValues & { 'form-name': string }) {
   return Object.keys(data)
     .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
@@ -84,64 +85,66 @@ const Contact: React.FC = () => {
             </Flex>
           </Column>
         </Row>
-        <Row>
-          <Column col={[12, 12, 12, 7]} inset={[0, 0, 0, 2.5]}>
-            <Formik
-              initialValues={{
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: '',
-              }}
-              validationSchema={Yup.object({
-                name: Yup.string().required('This field is required'),
-                email: Yup.string()
-                  .email()
-                  .required('This field is required'),
-                phone: Yup.string(),
-                subject: Yup.string(),
-                message: Yup.string().required('This field is required'),
-              })}
-              onSubmit={handleSubmit}>
-              {() => (
-                <Form
-                  action="/"
-                  method="POST"
-                  name="contact"
-                  data-netlify="true"
-                  data-netlify-honeypot="bot-field">
-                  {/* You still need to add the hidden input with the form name to your JSX form */}
-                  <input type="hidden" name="form-name" value="contact" />
-                  <Row>
-                    <Column col={[12, 6]}>
-                      <FormikInput label="Name" name="name" placeholder="" />
-                    </Column>
-                    <Column col={[12, 6]}>
-                      <FormikInput type="email" label="Email" name="email" placeholder="" />
-                    </Column>
-                  </Row>
-                  <Row>
-                    <Column col={[12, 6]}>
-                      <FormikInput label="Phone" name="phone" placeholder="" />
-                    </Column>
-                    <Column col={[12, 6]}>
-                      <FormikInput label="Subject" name="subject" placeholder="" />
-                    </Column>
-                  </Row>
-                  <Row>
-                    <Column col={[12, 6]}>
-                      <FormikTextArea rows={5} label="Message" name="message" placeholder="" />
-                    </Column>
-                  </Row>
-                  <Button variant="primary" type="submit">
-                    Send message
-                  </Button>
-                </Form>
-              )}
-            </Formik>
-          </Column>
-        </Row>
+        <Space mt="m">
+          <Row>
+            <Column col={[12, 12, 12, 7]} inset={[0, 0, 0, 2.5]}>
+              <Formik
+                initialValues={{
+                  name: '',
+                  email: '',
+                  phone: '',
+                  subject: '',
+                  message: '',
+                }}
+                validationSchema={Yup.object({
+                  name: Yup.string().required('This field is required'),
+                  email: Yup.string()
+                    .email()
+                    .required('This field is required'),
+                  phone: Yup.string(),
+                  subject: Yup.string(),
+                  message: Yup.string().required('This field is required'),
+                })}
+                onSubmit={handleSubmit}>
+                {() => (
+                  <Form
+                    action="/"
+                    method="POST"
+                    name="contact"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field">
+                    {/* You still need to add the hidden input with the form name to your JSX form */}
+                    <input type="hidden" name="form-name" value="contact" />
+                    <Row>
+                      <Column col={[12, 6]}>
+                        <FormikInput label="Name" name="name" placeholder="" />
+                      </Column>
+                      <Column col={[12, 6]}>
+                        <FormikInput type="email" label="Email" name="email" placeholder="" />
+                      </Column>
+                    </Row>
+                    <Row>
+                      <Column col={[12, 6]}>
+                        <FormikInput label="Phone" name="phone" placeholder="" />
+                      </Column>
+                      <Column col={[12, 6]}>
+                        <FormikInput label="Subject" name="subject" placeholder="" />
+                      </Column>
+                    </Row>
+                    <Row>
+                      <Column col={[12, 6]}>
+                        <FormikTextArea rows={5} label="Message" name="message" placeholder="" />
+                      </Column>
+                    </Row>
+                    <Button variant="primary" type="submit">
+                      Send message
+                    </Button>
+                  </Form>
+                )}
+              </Formik>
+            </Column>
+          </Row>
+        </Space>
       </Contain>
     </ContactContainer>
   )
