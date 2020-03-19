@@ -1,5 +1,5 @@
 import { Box } from '../Box'
-
+import React from 'react'
 import { colors } from '@/theme/colors'
 
 interface LoaderProps {
