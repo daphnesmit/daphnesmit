@@ -23,6 +23,7 @@ export type TextProps = BoxProps &
       | 'label'
     target?: string
     singleLine?: boolean
+    center?: boolean
   }
 
 export const Text = styled(Box)<TextProps>`
@@ -33,6 +34,11 @@ export const Text = styled(Box)<TextProps>`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+    `}
+  ${props =>
+    props.center &&
+    css`
+      text-align: center;
     `}
 `
 export const Paragraph = styled(Text)({})

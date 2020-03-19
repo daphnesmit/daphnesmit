@@ -56,7 +56,6 @@ const StyledTextArea = styled.textarea<TextAreaProps>`
 const TextAreaWrapper = styled.div<TextAreaProps & { hasFocus: boolean }>`
   color: ${props => props.color || 'black'};
   border-radius: 0px;
-  margin-bottom: ${({ theme }) => theme.space.xs}px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
   border-radius: 0;
   position: relative;

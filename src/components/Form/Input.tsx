@@ -55,7 +55,6 @@ const InputWrapper = styled.div<InputWrapperProps>`
   border-bottom: 1px solid ${({ theme }) => theme.colors.grey};
   border-radius: 0;
   position: relative;
-  margin-bottom: ${({ theme }) => theme.space.xs}px;
 
   &:hover {
     border-color: ${colors.primary};

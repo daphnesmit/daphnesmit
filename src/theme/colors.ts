@@ -5,6 +5,7 @@ export interface Colors {
   secondaryLight: string
   tertiary: string
   error: string
+  success: string
   black: string
   white: string
   offWhite: string
@@ -21,6 +22,7 @@ export const colors: Colors = {
   secondaryLight: '#374162',
   tertiary: '#d6a485',
   error: '#E40D10',
+  success: '#39b628',
   black: '#000000',
   white: '#ffffff',
   offWhite: '#f9f9f9',

@@ -3,6 +3,7 @@ import React from 'react'
 
 import { FieldInput, FieldInputProps } from '../FieldForm/FieldInput'
 import { FormikError } from './FormikError'
+import { Box } from '../Box'
 
 type FormikInput = FieldInputProps & {
   name: string
@@ -10,7 +11,7 @@ type FormikInput = FieldInputProps & {
 
 export const FormikInput: React.FC<FormikInput> = ({ name, ...props }) => {
   return (
-    <>
+    <Box mb="xs">
       <FastField name={name}>
         {({ field, form, meta }: FastFieldProps) => {
           return (
@@ -26,8 +27,7 @@ export const FormikInput: React.FC<FormikInput> = ({ name, ...props }) => {
           )
         }}
       </FastField>
-
       <FormikError name={name} />
-    </>
+    </Box>
   )
 }
