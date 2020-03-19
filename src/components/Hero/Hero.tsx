@@ -135,10 +135,14 @@ const HeroImgMe = styled(Box)`
 
 const HeroPositioner = styled(Box)`
   position: relative;
-  width: 100%;
-  max-width: 150vmin;
+  width: 150vmin;
   margin: auto;
   height: 100vh;
+  max-width: 100%;
+
+  ${media.min('laptop')} {
+    max-width: none;
+  }
 `
 
 const animatedZigZag = keyframes`
@@ -348,7 +352,6 @@ const HeroIconLink = styled.a`
 `
 
 const Hero: React.FC = () => {
-  // const { source, loaded } = useBackgroundImage('/img/trans-me-shadow.png')
   return (
     <HeroContainer>
       <Contain>
