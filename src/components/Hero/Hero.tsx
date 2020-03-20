@@ -1,14 +1,17 @@
-import { Icon } from '../Icon'
-import { Img } from '../Img'
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
+
+import { media } from '@/utils/media'
+
 import { Box } from '../Box'
 import { Column } from '../Column'
 import { Contain } from '../Contain'
 import { Flex } from '../Flex'
 import { Heading } from '../Heading'
-import { media } from '@/utils/media'
+import { Icon } from '../Icon'
+import { Img } from '../Img'
 import { Row } from '../Row'
+import { Text } from '../Text'
 
 interface HeroContainerProps {
   background?: string
@@ -366,6 +369,7 @@ const HeroIcons = styled(Flex)`
   }
 `
 const HeroIconLink = styled.a`
+  line-height: 1;
   &:focus,
   &:hover {
     svg path {
@@ -409,6 +413,12 @@ const Hero: React.FC = () => {
                     </HeroIconLink>
                     <HeroIconLink target="_blank" href="https://www.instagram.com/daphnesmit">
                       <Icon icon="Instagram" size="2.5vmin" color="#282828" />
+                    </HeroIconLink>
+
+                    <HeroIconLink target="_blank" href="/documents/cv-daphne-smit-light.pdf">
+                      <Text fontWeight="bold" color="#282828" lineHeight="1">
+                        cv
+                      </Text>
                     </HeroIconLink>
                   </HeroIcons>
                 </HeroTextBox>
