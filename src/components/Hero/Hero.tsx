@@ -1,3 +1,5 @@
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 
@@ -9,7 +11,7 @@ import { Contain } from '../Contain'
 import { Flex } from '../Flex'
 import { Heading } from '../Heading'
 import { Icon } from '../Icon'
-import { Img } from '../Img'
+import { Img as Image } from '../Img'
 import { Row } from '../Row'
 import { Text } from '../Text'
 
@@ -379,6 +381,19 @@ const HeroIconLink = styled.a`
 `
 
 const Hero: React.FC = () => {
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      file(relativePath: { eq: "trans-me-shadow_1080.png" }) {
+        childImageSharp {
+          # Specify the image processing specifications right in the query.
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `)
+  console.log(data)
   return (
     <HeroContainer>
       <Contain>
@@ -415,38 +430,22 @@ const Hero: React.FC = () => {
                       <Icon icon="Instagram" size="2.5vmin" color="#282828" />
                     </HeroIconLink>
 
-                    <HeroIconLink target="_blank" href="/documents/cv-daphne-smit-light.pdf">
+                    {/* <HeroIconLink target="_blank" href="/documents/cv-daphne-smit-light.pdf">
                       <Text fontWeight="bold" color="#282828" lineHeight="1">
                         cv
                       </Text>
-                    </HeroIconLink>
+                    </HeroIconLink> */}
                   </HeroIcons>
                 </HeroTextBox>
                 <HeroCircleBackground />
                 <HeroImgMe>
                   <Img
-                    src="/img/trans-me-shadow_630.png"
-                    srcSet={[
-                      {
-                        src: '/img/trans-me-shadow_450.png',
-                        width: 450,
-                      },
-                      {
-                        src: '/img/trans-me-shadow_630.png',
-                        width: 630,
-                      },
-                      {
-                        src: '/img/trans-me-shadow_810.png',
-                        width: 810,
-                      },
-                      {
-                        src: '/img/trans-me-shadow_1080.png',
-                        width: 1080,
-                      },
-                    ]}
-                    preload="/img/trans-me-shadow-preload.png"
+                    fadeIn={false}
+                    loading="auto"
+                    // fixed={typeof window === 'undefined' ? { src: {} } : undefined}
+                    fluid={data.file.childImageSharp.fluid}
                     alt="Profiel Foto Daphne Smit"
-                  />
+                 />
                 </HeroImgMe>
                 <HeroImgDecoration1 aria-label="Zig Zag Decorational ornament">
                   <svg
@@ -466,7 +465,7 @@ const Hero: React.FC = () => {
                   </svg>
                 </HeroImgDecoration1>
                 <HeroImgDecoration2>
-                  <Img src="/img/hero-decor-02.png" alt="" />
+                  <Image src="/img/hero-decor-02.png" alt="" />
                 </HeroImgDecoration2>
                 <HeroCircleDecoration1>
                   <svg width="30" height="30">
