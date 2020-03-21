@@ -89,9 +89,9 @@ const Contact: React.FC = () => {
     <ContactContainer>
       <Contain>
         <Row>
-          <Column col={[12, 12, 12, 8]} inset={[0, 0, 0, 2]}>
+          <Column col={[12, 12, 12, 6]} inset={[0, 0, 0, 3]}>
             <Flex flexDirection="column" alignItems="center">
-              <Subtitle>Let’s talk</Subtitle>
+              <Subtitle mb="xs">Nice to meet you</Subtitle>
               <ContactTitle as="h3">Get in touch with me</ContactTitle>
               <ContactText>
                 Check out my CV on{' '}
@@ -103,7 +103,7 @@ const Contact: React.FC = () => {
                   Github
                 </ContactLink>{' '}
                 (only open source stuff) if you want to see more of my work.<br/>
-                Contact me if you have a cool project. Let&apos;s create some epic shit!
+                Let&apos;s create some epic shit!
               </ContactText>
             </Flex>
           </Column>
