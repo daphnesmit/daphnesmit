@@ -403,7 +403,7 @@ const Hero: React.FC = () => {
               <HeroPositioner position="relative">
                 <HeroTextBox>
                   <HeroName as="h2">
-                    Daphne Smit | <a href="tel:0031630805551">06 30 80 55 51</a>
+                    Daphne Smit 
                     <br />
                     Freelance Frontend Developer
                   </HeroName>
@@ -429,12 +429,11 @@ const Hero: React.FC = () => {
                     <HeroIconLink target="_blank" href="https://www.instagram.com/daphnesmit">
                       <Icon icon="Instagram" size="2.5vmin" color="#282828" />
                     </HeroIconLink>
-
-                    {/* <HeroIconLink target="_blank" href="/documents/cv-daphne-smit-light.pdf">
+                    <HeroIconLink target="_blank" href="/documents/cv-daphne-smit-light.pdf">
                       <Text fontWeight="bold" color="#282828" lineHeight="1">
                         cv
                       </Text>
-                    </HeroIconLink> */}
+                    </HeroIconLink>
                   </HeroIcons>
                 </HeroTextBox>
                 <HeroCircleBackground />
@@ -442,7 +441,6 @@ const Hero: React.FC = () => {
                   <Img
                     fadeIn={false}
                     loading="auto"
-                    // fixed={typeof window === 'undefined' ? { src: {} } : undefined}
                     fluid={data.file.childImageSharp.fluid}
                     alt="Profiel Foto Daphne Smit"
                  />
