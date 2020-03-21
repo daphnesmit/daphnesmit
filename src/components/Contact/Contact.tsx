@@ -1,20 +1,22 @@
+import { Form, Formik } from 'formik'
 import React from 'react'
 import styled from 'styled-components'
-import { Form, Formik } from 'formik'
 import * as Yup from 'yup'
+
+import { media } from '@/utils/media'
+import { SubmitHandler } from '@/utils/types'
+
 import { Button } from '../Button'
 import { Column } from '../Column'
 import { Contain } from '../Contain'
-import { Heading } from '../Heading'
-import { Row } from '../Row'
 import { Flex } from '../Flex'
-import { Text } from '../Text'
-import { Space } from '../Space'
-import { Subtitle } from '../Subtitle'
 import { FormikInput } from '../Formik/FormikInput'
 import { FormikTextArea } from '../Formik/FormikTextArea'
-import { SubmitHandler } from '@/utils/types'
-import { media } from '@/utils/media'
+import { Heading } from '../Heading'
+import { Row } from '../Row'
+import { Space } from '../Space'
+import { Subtitle } from '../Subtitle'
+import { Text } from '../Text'
 
 interface ContactContainerProps {
   background?: string
@@ -87,7 +89,7 @@ const Contact: React.FC = () => {
     <ContactContainer>
       <Contain>
         <Row>
-          <Column col={[12, 12, 12, 6]} inset={[0, 0, 0, 3]}>
+          <Column col={[12, 12, 12, 8]} inset={[0, 0, 0, 2]}>
             <Flex flexDirection="column" alignItems="center">
               <Subtitle>Let’s talk</Subtitle>
               <ContactTitle as="h3">Get in touch with me</ContactTitle>
@@ -100,7 +102,8 @@ const Contact: React.FC = () => {
                 <ContactLink href="https://github.com/daphnesmit" target="_blank">
                   Github
                 </ContactLink>{' '}
-                (only open source stuff) if you want to see more of my work.
+                (only open source stuff) if you want to see more of my work.<br/>
+                Contact me if you have a cool project. Let&apos;s create some epic shit!
               </ContactText>
             </Flex>
           </Column>
@@ -110,12 +113,12 @@ const Contact: React.FC = () => {
             <Column col={[12, 12, 12, 7]} inset={[0, 0, 0, 2.5]}>
               {submitSuccess && (
                 <Text center as="p" color="success">
-                  🚀 Thank you for your message! I will get back to you as soon as possible.
+                  <span role="img" aria-label="rocket emoji">🚀</span> Thank you for your message! I will get back to you as soon as possible.
                 </Text>
               )}
               {submitError && (
                 <Text center as="p" color="error">
-                  🚨 We couldn't send the form. You can also send me a direct email to:
+                   <span role="img" aria-label="alarm emoji">🚨</span> We couldn&apos;t send the form. You can also send me a direct email to:
                   <a href="mailto:daphnesmit1986@gmail.com">daphnesmit1986@gmail.com</a>
                 </Text>
               )}
