@@ -1,9 +1,9 @@
+import { darken } from 'polished'
 import { DefaultTheme } from 'styled-components'
 
 import * as iconComponents from '../components/Icon/icons'
 import { colors } from './colors'
 import { grid, ThemeGrid } from './grid'
-import { darken } from 'polished'
 
 const fontSizes = {
   root: '10px',
@@ -102,7 +102,7 @@ export interface CustomTheme {
 }
 
 export const theme: DefaultTheme = {
-  breakpoints: ['30em', '52em', '64em', '80em'],
+  breakpoints: ['30em', '52em', '64em', '80em', '90em'], // 480, 832, 1024, 1280, 1440
   fontSizes,
   fontWeights,
   space,

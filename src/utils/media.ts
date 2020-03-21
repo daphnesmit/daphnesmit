@@ -1,12 +1,13 @@
 import { theme } from '../theme/theme'
 
-const [mobile, tablet, laptop, desktop] = theme.breakpoints
+const [mobile, tablet, laptop, desktop, desktopPlus] = theme.breakpoints
 
 const breakpoints = {
   mobile,
   tablet,
   laptop,
   desktop,
+  desktopPlus,
 }
 
 type Breakpoints = keyof typeof breakpoints
