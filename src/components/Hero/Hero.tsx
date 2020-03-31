@@ -1,7 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import React from 'react'
-import styled, { css, keyframes } from 'styled-components'
+
+import { useScrollTo } from '@/utils/hooks/useScrollTo'
 
 import { Box } from '../Box'
 import { Column } from '../Column'
@@ -32,7 +33,12 @@ import {
   ZigZag,
 } from './components'
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  contactRef: React.RefObject<HTMLDivElement>
+}
+
+const Hero: React.FC<HeroProps> = ({ contactRef }) => {
+  const [scrollTo] = useScrollTo()
   const heroImage = useStaticQuery(graphql`
     query MyQuery {
       file(relativePath: { eq: "trans-me-shadow_1080.png" }) {
@@ -45,6 +51,15 @@ const Hero: React.FC = () => {
       }
     }
   `)
+
+  const handleScroll = () => {
+    if (contactRef) {
+      scrollTo({
+        to: contactRef.current ? contactRef.current.offsetTop : 0,
+        duration: 300,
+      })
+    }
+  }
 
   return (
     <HeroContainer>
@@ -131,7 +146,7 @@ const Hero: React.FC = () => {
                 <HeroCircleDecoration2 />
                 <HeroCircleDecoration3 />
                 <HeroCircleDecoration4 />
-                <HeroScrollIndicator>Scroll</HeroScrollIndicator>
+                <HeroScrollIndicator onClick={handleScroll}>Scroll</HeroScrollIndicator>
               </HeroPositioner>
             </Box>
           </Column>

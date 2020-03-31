@@ -45,6 +45,7 @@
     "gatsby-transformer-sharp": "^2.4.1",
     "netlify-cms-app": "^2.11.32",
     "polished": "^3.5.0",
+    "raf": "^3.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^5.2.1",
@@ -57,6 +58,7 @@
   },
   "devDependencies": {
     "@types/loadable__component": "^5.10.0",
+    "@types/raf": "^3.4.0",
     "@types/react-helmet": "^5.0.15",
     "@types/styled-components": "^4.4.3",
     "@types/styled-system": "^5.1.9",

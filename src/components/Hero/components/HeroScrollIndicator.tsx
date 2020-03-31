@@ -18,6 +18,7 @@ export const HeroScrollIndicator = styled(Box)`
   line-height: 1;
   transform: translate3d(50%, -50%, 0) rotate(-90deg);
   transform-origin: top center;
+  cursor: pointer;
 
   &::before {
     content: '';

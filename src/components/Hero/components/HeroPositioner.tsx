@@ -18,7 +18,7 @@ export const HeroPositioner = styled(Box)`
   }
   // 1280,
   ${media.min('desktop')} {
-    min-width: 1024px;
+    min-width: 90vmin;
     max-width: 100%;
   }
   // 1440
