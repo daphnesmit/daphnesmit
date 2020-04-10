@@ -38,8 +38,11 @@ const Footer: React.FC = () => (
             Big fan of{' '}
             <Hyperlink color="subtitle" href="https://github.com/daphnesmit">
               open source
-            </Hyperlink>
-            !
+            </Hyperlink>{' '}
+            and member of{' '}
+            <Hyperlink color="subtitle" href="https://opentech.team/">
+              Open Tech
+            </Hyperlink>!
           </Text>
         </Box>
       </Flex>
