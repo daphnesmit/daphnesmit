@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Box } from '../Box'
 import Contact from '../Contact'
+import Footer from '../Footer'
 import Hero from '../Hero'
 
 interface IndexPageTemplateProps {
@@ -19,6 +20,7 @@ export const IndexPageTemplate: React.FC<IndexPageTemplateProps> = ({ title, ima
       <Box ref={ref}>
         <Contact />
       </Box>
+      <Footer/>
     </>
   )
 }
