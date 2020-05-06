@@ -96,7 +96,7 @@ const Hero: React.FC<HeroProps> = ({ contactRef }) => {
                     <HeroIconLink target="_blank" href="https://www.instagram.com/daphnesmit">
                       <Icon icon="Instagram" size="2.5vmin" color="#282828" />
                     </HeroIconLink>
-                    <HeroIconLink target="_blank" href="/documents/cv-daphne-projects-site-small.pdf">
+                    <HeroIconLink target="_blank" href="/documents/cv-daphne-smit-frontend-developer.pdf">
                       <Text fontWeight="bold" color="#282828" lineHeight="1">
                         cv
                       </Text>
