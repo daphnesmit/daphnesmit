@@ -50,7 +50,7 @@ const ButtonBase = styled(Box)<ButtonProps>`
 
   ${props => (props.inline ? 'display: inline-flex' : '')};
   ${props => (props.block ? 'display: block; width: 100%;' : '')};
-  ${props => (props.variant !== 'clear' ? 'height: 50px;' : '')}
+  ${props => (props.variant !== 'clear' ? 'height: 50px;line-height:50px;' : '')}
 `
 
 const StyledButtonLabel = styled.span<ButtonProps>`
