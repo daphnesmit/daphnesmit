@@ -9,7 +9,7 @@ Currently working at [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 👩🏼‍💻 **Repositories I created or contributed to**
 - 💻 I made a utility library for utils I often use called [essential-ts-utils](https://github.com/daphnesmit/essential-ts-utils)
 - 🦄 I made a useCornify hook to use as an easter egg[use-cornify](https://github.com/daphnesmit/use-cornify)
-- ✍ I contributed to nice Typescript, React and Styled System setup called [next-react-typescript-boilerplate](https://github.com/daphnesmit/next-react-typescript-boilerplate)
+- ✍ I contributed and adapted this nice Typescript, React and Styled System setup called [next-react-typescript-boilerplate](https://github.com/daphnesmit/next-react-typescript-boilerplate)
 - ❤️ I’m currently loving the new [NextJS](https://nextjs.org/)
 - 🏀 I play basketball, my 🐱's name is Silver and I live 👭 in Amsterdam
 
