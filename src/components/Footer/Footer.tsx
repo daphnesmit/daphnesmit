@@ -35,14 +35,15 @@ const Footer: React.FC = () => (
               Essential Typescript Utils
             </Hyperlink>
             . <br />
+            I made a pkg to walk a React tree and await promises - which will hopefully be solved by Suspense - called{' '}
+            <Hyperlink color="subtitle" href="https://github.com/daphnesmit/with-next-promise-tree-walker">
+            with-next-promise-tree-walker
+            </Hyperlink>{' '} 
+            . <br/>
             Big fan of{' '}
             <Hyperlink color="subtitle" href="https://github.com/daphnesmit">
               open source
             </Hyperlink>{' '}
-            and member of{' '}
-            <Hyperlink color="subtitle" href="https://opentech.team/">
-              Open Tech
-            </Hyperlink>!
           </Text>
         </Box>
       </Flex>
