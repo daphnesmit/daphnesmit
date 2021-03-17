@@ -7,6 +7,8 @@ Currently working at [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 <br/>
 
 👩🏼‍💻 **Repositories I created or contributed to**
+- 🌳 I made a pkg to walk a React tree and await promises which will hopefully be solved by Suspense [with-next-promise-tree-walker](https://github.com/daphnesmit/with-next-promise-tree-walker)
+- 🌳 I published a pkg to walk a React tree and await all Apollo's useQuery fetchers [with-next-apollo-tree-walker](https://github.com/daphnesmit/with-next-apollo-tree-walker)
 - 💻 I made a utility library for utils I often use [essential-ts-utils](https://github.com/daphnesmit/essential-ts-utils)
 - 🦄 I made a useCornify hook to use as an easter egg named [use-cornify](https://github.com/daphnesmit/use-cornify)
 - ✍ I contributed and adapted this nice Typescript, React and Styled System setup called [next-react-typescript-boilerplate](https://github.com/daphnesmit/next-react-typescript-boilerplate)
