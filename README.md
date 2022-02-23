@@ -20,6 +20,14 @@ Currently working at [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 
 <br/>
 
+📝 **Things on my TODO list**
+- Update  [koa-typescript-graphql-starter](https://github.com/daphnesmit/koa-typescript-graphql-starter) to Apollo Server 3
+- Create an Eslint config / common scripts repository 
+- Update dependencies of open source projects
+- Check prntr issues list and try fix the focus issues on Edge and such.
+- Create more ts utils
+- ....
+
 👨🏼‍💻 **Tech I like**
 <p align="left">
 <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a>
