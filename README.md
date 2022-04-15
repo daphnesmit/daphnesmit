@@ -7,6 +7,7 @@ Currently working at [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 <br/>
 
 👩🏼‍💻 **Repositories I created or contributed to**
+- I like Strict linting. Lint your next React Typescript project with [this full fletched eslint setup](https://www.npmjs.com/package/@frntnd/eslint)!
 - 🖨️ I made a modern version of [Print.js](https://github.com/crabbly/print.js) called [Prntr](https://github.com/daphnesmit/prntr) because Print.js is not actively maintained anymore. `npm i prntr` Try it!
 - 💎 I made a starter for creating a React Typescript package with Eslint, React Testing Library and Rollup. See [react-typescript-package-boilerplate](https://github.com/daphnesmit/react-typescript-package-boilerplate)
 - 💎 I made a starter for a Koa, GraphQl and Typescript server. See [koa-typescript-graphql-starter](https://github.com/daphnesmit/koa-typescript-graphql-starter)
