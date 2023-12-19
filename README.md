@@ -26,11 +26,7 @@ Currently working at [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 <br/>
 
 📝 **Things on my TODO list**
-- Update  [koa-typescript-graphql-starter](https://github.com/daphnesmit/koa-typescript-graphql-starter) to Apollo Server 3
-- Create an Eslint config / common scripts repository 
-- Update dependencies of open source projects
-- Check prntr issues list and try fix the focus issues on Edge and such.
-- Create more ts utils
+- Update my github repos...
 - ....
 
 👨🏼‍💻 **Tech I like**
