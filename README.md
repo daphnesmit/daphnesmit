@@ -2,7 +2,10 @@
 
 I’m a Freelance Frontend Developer from Amsterdam. Current stack is React, Typescript and GraphQL. Started off my career  back in the days using tables; iframes had hardly left the building and tables were cool! Since then I worked at 3 different agencies for about 10 years and I am currently living the freelance life.
 <br/>
+<br/>
 Sidenote: Some of these projects below might be old and I do not always update them regularly.
+<br/>
+<br/>
 Currently working at [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 <br/>
 <br/>
