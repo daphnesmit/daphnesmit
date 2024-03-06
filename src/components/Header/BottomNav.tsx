@@ -1,5 +1,3 @@
-import Button from '../Button'
-import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 import { Box } from '../Box'
