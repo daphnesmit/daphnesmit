@@ -6,7 +6,7 @@ I’m a Frontend Developer from Amsterdam. Current stack is mostly React, Typesc
 Sidenote: Some of these projects below might be old and I do not always update them regularly.
 <br/>
 <br/>
-Currently working at [Lefebvre Sarrut / SDU](https://github.com/elseu/)
+Last project: [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 <br/>
 <br/>
 
