@@ -1,6 +1,6 @@
 ### Hey there! 👩🏼‍💻 
 
-I’m a Freelance Frontend Developer from Amsterdam. Current stack is React, Typescript and GraphQL. Started off my career  back in the days using tables; iframes had hardly left the building and tables were cool! Since then I worked at 3 different agencies for about 10 years and I am currently living the freelance life. 🏀 I play basketball, I boulder, my 🐱's name is Silver and I live 👭 in Amsterdam
+I’m a Frontend Developer from Amsterdam. Current stack is mostly React, Typescript, GraphQL, Nextjs, Tailwind/CSSinJS, state management with zustand or similar. Started off my career back in the days using tables; iframes had hardly left the building and tables were cool! Since then I worked at 3 different agencies for about 10 years and I am currently living the freelance life. 🏀 I play basketball, I boulder, my 🐱's name is Silver and I currently live 👭 in Amsterdam.
 <br/>
 <br/>
 Sidenote: Some of these projects below might be old and I do not always update them regularly.
@@ -10,17 +10,16 @@ Currently working at [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 <br/>
 <br/>
 
-👩🏼‍💻 **Repositories I created or contributed to**
+👩🏼‍💻 **Repositories I created or contributed to, most of them not actively maintained**
 - 🖨️ I made a modern version of [Print.js](https://github.com/crabbly/print.js) called [Prntr](https://github.com/daphnesmit/prntr) because Print.js is not actively maintained anymore. `npm i prntr` Try it!
 - 💎 I made a starter for creating a React Typescript package with Eslint, React Testing Library and Rollup. See [react-typescript-package-boilerplate](https://github.com/daphnesmit/react-typescript-package-boilerplate)
 - 💎 I made a starter for a Koa, GraphQl and Typescript server. See [koa-typescript-graphql-starter](https://github.com/daphnesmit/koa-typescript-graphql-starter)
 - I like Strict linting. Lint your next React Typescript project with [this full fletched eslint setup](https://www.npmjs.com/package/@frntnd/eslint)!
 - 🌳 I made a pkg to walk a React tree and await promises which will hopefully be solved by Suspense [with-next-promise-tree-walker](https://github.com/daphnesmit/with-next-promise-tree-walker)
 - 🌳 I published a pkg to walk a React tree and await all Apollo's useQuery fetchers [with-next-apollo-tree-walker](https://github.com/daphnesmit/with-next-apollo-tree-walker)
-- 💻 I made a utility library for utils I often use [essential-ts-utils](https://github.com/daphnesmit/essential-ts-utils)
 - 🦄 I made a useCornify hook to use as an easter egg named [use-cornify](https://github.com/daphnesmit/use-cornify)
 - ✍ I contributed and adapted this nice Typescript, React and Styled System setup called [next-react-typescript-boilerplate](https://github.com/daphnesmit/next-react-typescript-boilerplate)
-- ❤️ I’m currently loving the new [NextJS](https://nextjs.org/)
+- ❤️ I’m using [NextJS] (https://nextjs.org/)
 
 <br/>
 
