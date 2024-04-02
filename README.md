@@ -1,6 +1,6 @@
 ### Hey there! 👩🏼‍💻 
 
-I’m a Frontend Developer from Amsterdam. Current stack is mostly React, Typescript, GraphQL, Nextjs, Tailwind/CSSinJS, state management with zustand or similar. Started off my career back in the days using tables; iframes had hardly left the building and tables were cool! Since then I worked at 3 different agencies for about 10 years and I am currently living the freelance life. 🏀 I play basketball, I boulder, my 🐱's name is Silver and I currently live 👭 in Amsterdam.
+I’m a Frontend Developer from Amsterdam. Current stack is mostly React, Typescript, GraphQL, Nextjs, Tailwind/CSSinJS, state management with zustand or similar. Started off my career back in the days using tables; iframes had hardly left the building and tables were cool! Since then I worked at 3 different agencie for about 12 years and I am currently living the freelance life. 🏀 I play basketball, I boulder, my 🐱's name is Silver and I currently live 👭 in Amsterdam.
 <br/>
 <br/>
 Sidenote: Some of these projects below might be old and I do not always update them regularly.
@@ -11,6 +11,7 @@ Last project: [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 <br/>
 
 👩🏼‍💻 **Repositories I created or contributed to, most of them not actively maintained**
+- 🪝 Made a React [websocket hook](https://github.com/daphnesmit/use-awesome-websocket/) and provider to integrate WebSockets into your React Components.
 - 🖨️ I made a modern version of [Print.js](https://github.com/crabbly/print.js) called [Prntr](https://github.com/daphnesmit/prntr) because Print.js is not actively maintained anymore. `npm i prntr` Try it!
 - 💎 I made a starter for creating a React Typescript package with Eslint, React Testing Library and Rollup. See [react-typescript-package-boilerplate](https://github.com/daphnesmit/react-typescript-package-boilerplate)
 - 💎 I made a starter for a Koa, GraphQl and Typescript server. See [koa-typescript-graphql-starter](https://github.com/daphnesmit/koa-typescript-graphql-starter)
