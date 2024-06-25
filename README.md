@@ -20,7 +20,7 @@ Last project: [Lefebvre Sarrut / SDU](https://github.com/elseu/)
 - 🌳 I published a pkg to walk a React tree and await all Apollo's useQuery fetchers [with-next-apollo-tree-walker](https://github.com/daphnesmit/with-next-apollo-tree-walker)
 - 🦄 I made a useCornify hook to use as an easter egg named [use-cornify](https://github.com/daphnesmit/use-cornify)
 - ✍ I contributed and adapted this nice Typescript, React and Styled System setup called [next-react-typescript-boilerplate](https://github.com/daphnesmit/next-react-typescript-boilerplate)
-- ❤️ I’m using [NextJS] (https://nextjs.org/)
+- ❤️ I’m using [NextJS](https://nextjs.org/)
 
 <br/>
 
