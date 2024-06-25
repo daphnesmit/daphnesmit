@@ -6,7 +6,7 @@ I’m a Senior Software Engineer (Frontend) from Amsterdam, currently living in 
 Sidenote: Some of these projects below might be old and I do not always update them regularly.
 <br/>
 <br/>
-Last project: [Lefebvre Sarrut / SDU](https://github.com/elseu/)
+Currently employed at @ Wikimedia Foundation
 <br/>
 <br/>
 
