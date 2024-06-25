@@ -1,6 +1,6 @@
 ### Hey there! 👩🏼‍💻 
 
-I’m a Frontend Developer from Amsterdam. Current stack is mostly React, Typescript, GraphQL, Nextjs, Tailwind/CSSinJS, state management with zustand or similar. Started off my career back in the days using tables; iframes had hardly left the building and tables were cool! Since then I worked at 3 different agencies for about 12 years and I am currently living the freelance life. 🏀 I play basketball, I boulder, my 🐱's name is Silver and I currently live 👭 in Amsterdam.
+I’m a Senior Software Engineer (Frontend) from Amsterdam, currently living in Zwolle. Stack recently has been mostly React, Typescript, GraphQL, Nextjs, Tailwind/CSSinJS, state management with zustand or similar. Started off my career back in the days using tables; iframes had hardly left the building and tables were cool! Since then I worked at 3 different agencies for about 12 years and I am currently living the freelance life. 🏀 I play basketball, I boulder, my 🐱's name is Silver and I currently live 👭 in Amsterdam.
 <br/>
 <br/>
 Sidenote: Some of these projects below might be old and I do not always update them regularly.
